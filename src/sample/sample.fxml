@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="782.0" prefWidth="1188.0" style="-fx-background-color: #14213d;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <GridPane fx:id="playGrid" layoutX="112.0" layoutY="78.0" prefHeight="423.0" prefWidth="413.0" style="-fx-background-color: f7ede2;">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="80.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="90.0" minWidth="10.0" prefWidth="80.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="95.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="110.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </GridPane>
+      <Button fx:id="startBtn" layoutX="333.0" layoutY="39.0" mnemonicParsing="false" onAction="#startButton" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: #a2d2ff; -fx-border-color: #073b4c; -fx-border-width: 2;" text="Start Game" textFill="#073b4c">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="sizeLbl" layoutX="550.0" layoutY="76.0" prefHeight="18.0" prefWidth="155.0" text="Size:" textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <Label fx:id="containerLbl" layoutX="550.0" layoutY="113.0" prefHeight="18.0" prefWidth="155.0" text="Container:" textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <Label fx:id="colorLbl" layoutX="550.0" layoutY="153.0" prefHeight="18.0" prefWidth="155.0" text="Color:" textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <Label fx:id="patternLbl" layoutX="550.0" layoutY="193.0" prefHeight="18.0" prefWidth="155.0" text="Pattern:" textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <Label fx:id="cardsLeftLbl" layoutX="112.0" layoutY="519.0" prefHeight="18.0" prefWidth="155.0" text="Cards Left (undealt): " textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <Label fx:id="projectedEarningslbl" layoutX="550.0" layoutY="259.0" prefHeight="18.0" prefWidth="155.0" text="Projected Earnings:" textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <Separator layoutX="550.0" layoutY="238.0" prefWidth="200.0" style="-fx-background-color: 3d405b;" />
+      <Label fx:id="matchingAttributeslbl" layoutX="550.0" layoutY="298.0" prefHeight="18.0" prefWidth="397.0" text="Matching Attributes: " textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <Separator layoutX="550.0" layoutY="340.0" prefWidth="200.0" style="-fx-border-color: 3d405b;" />
+      <Button fx:id="collectBtn" disable="true" layoutX="444.0" layoutY="515.0" mnemonicParsing="false" onAction="#collectButton" prefHeight="26.0" prefWidth="87.0" style="-fx-background-color: #a2d2ff; -fx-border-width: 2; -fx-border-color: #073b4c;" text="Collect!" textFill="#073b4c">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ListView fx:id="playerScoresList" layoutX="550.0" layoutY="379.0" prefHeight="136.0" prefWidth="127.0" style="-fx-background-color: #06d6a0; -fx-border-color: #06d6a0;" />
+      <TextField fx:id="playersTxt" layoutX="221.0" layoutY="41.0" onAction="#handlePlayers" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: ef476f;" text="# Players">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></TextField>
+      <ListView fx:id="updatesList" layoutX="112.0" layoutY="578.0" prefHeight="156.0" prefWidth="652.0" style="-fx-background-color: ef476f; -fx-border-color: ef476f;" />
+      <Label fx:id="turnLbl" layoutX="287.0" layoutY="520.0" prefHeight="18.0" prefWidth="127.0" text="Turn:" textFill="#ffd166">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Label>
+      <ListView fx:id="bankList" layoutX="689.0" layoutY="379.0" prefHeight="136.0" prefWidth="127.0" style="-fx-background-color: #06d6a0; -fx-border-color: #06d6a0;" />
+      <ListView fx:id="powerupsList" layoutX="760.0" layoutY="100.0" prefHeight="125.0" prefWidth="262.0" style="-fx-background-color: #ef476f; -fx-border-color: #ef476f;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ListView>
+      <Button fx:id="powerUpsBtn" disable="true" layoutX="827.0" layoutY="239.0" mnemonicParsing="false" onAction="#buyPowerups" prefHeight="30.0" prefWidth="127.0" style="-fx-background-color: #a2d2ff; -fx-border-color: #073b4c; -fx-border-width: 2;" text="Buy Powerups" textFill="#073b4c">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ListView fx:id="stealPointsList" layoutX="1040.0" layoutY="114.0" prefHeight="111.0" prefWidth="135.0" style="-fx-background-color: #ef476f;" visible="false" />
+      <Button fx:id="stealPointsBtn" layoutX="1073.0" layoutY="238.0" mnemonicParsing="false" onAction="#stealPoints" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #a2d2ff; -fx-border-width: 2; -fx-border-color: #073b4c;" text="Steal!" visible="false">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Button>
+      <Text fill="#06d6a0" layoutX="560.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Points" textAlignment="CENTER" wrappingWidth="108.0">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Text>
+      <Text fill="#06d6a0" layoutX="713.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Bank" textAlignment="CENTER" wrappingWidth="78.39999999999998">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font></Text>
+      <Text fill="#ef476f" layoutX="827.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Powerups" textAlignment="CENTER" wrappingWidth="127.19999999999993">
+         <font>
+            <Font name="Lucida Bright Demibold" size="15.0" />
+         </font>
+      </Text>
+      <Button layoutX="32.0" layoutY="26.0" mnemonicParsing="false" onAction="#displayInstructions" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #a2d2ff; -fx-border-color: #073b4c; -fx-border-width: 2;" text="Instructions" textFill="#073b4c">
+         <font>
+            <Font name="Lucida Bright Demibold" size="13.0" />
+         </font>
+      </Button>
+      <Rectangle fx:id="instructionsBackground" arcHeight="5.0" arcWidth="5.0" fill="#14213d" height="489.0" layoutX="39.0" layoutY="75.0" stroke="#06d6a0" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="3.0" visible="false" width="1034.0" />
+      <Text fx:id="instructions1" fill="#f5f5f5" layoutX="63.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to the Bold Card Game! " textAlignment="CENTER" visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions2" fill="#f5f5f5" layoutX="63.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In this 2- 6 player game, all of you are competing against each other to collect as many points as possible. The winner is the person who has the most number of points once all 81 cards in the deck are exhausted." visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions3" fill="#f5f5f5" layoutX="63.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This game starts with randomly selected cards placed face-down on the grid. Your job will be to flip over two cards, and if they have one or more matching attributes (size, container, color, or pattern), it counts as a pair! At this point, you can continue selecting more cards or collect the cards you've already chosen. " visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions4" fill="#f5f5f5" layoutX="63.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="As long as all of your cards have at least one common attribute, your turn continues, and the more cards you can select, the more points you get (2 cards = 4 points, 3 cards = 9 points, 4 cards = 16 points, 5 cards = 25 points, and so on). However, if you pick a card which doesn't have any matching attributes, your turn automatically ends and you get zero points." visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions5" fill="#f5f5f5" layoutX="63.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Throughout the game, you will also collect money, and can use this to buy powerups that will help you get ahead. However, unlike scoring points, the amount of money you earn depends on BOTH how many cards you have selected and the number of matching attributes. " visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions6" fill="#f5f5f5" layoutX="105.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="With one matching attribute, money earned is the number of cards selected. With two matching attributes, money earned is the number of cards selected squared. With three matching attributes, money earned is the number of cards cubed." visible="false" wrappingWidth="951.1366996765137">
+         <font>
+            <Font name="Lucida Bright Demibold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions7" fill="#f5f5f5" layoutX="63.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Therefore, in some cases, you'll have to really think through strategy: do you want more cards and less matching attributes, or do you want less cards with more matching attributes so that you get more money to buy powerups?" visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions8" fill="#f5f5f5" layoutX="62.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="In terms of spending money, you have to purchase the powerup at the beginning of the turn, before actually selecting cards. There are 5 powerups, all of which range in cost from $10-$25. They are: (1) stealing 50% points from one other player, (2) stealing 20% points from every player, (3) doubling your points, (4) doubling points earned for three turns, (5) getting two turns in a row." visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="instructions9" fill="#f5f5f5" layoutX="59.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Have Fun!" textAlignment="CENTER" visible="false" wrappingWidth="993.1367034912109">
+         <font>
+            <Font name="Lucida Bright Demibold" size="16.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
